@@ -1,0 +1,29 @@
+<header class="row">
+    <div class="columns">
+      <a href="/"><h3><i><div class="website-name">uilendoggies</div></i></h3></a>
+      <div class="tagline">For doggies, by doggies</div>
+      <nav>
+        <ul>
+          <li><a href="#">Music</a></li>
+          <li><a href="#">Film</a></li>
+          <li><a href="#">Books</a></li>
+          <li><a href="#">Art</a></li>
+          <li><a href="#">Ideas</a></li>
+          <li><a href="#">Other media</a></li>
+          <li><a href="/#">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<script>
+    //set Active link according to pages
+    var origin = window.location.origin;
+    var page_location = window.location.href.replace(origin + '/', '').trim();
+    // console.log(page_location);
+    $('.navbar_links a[href*="' + page_location + '"]').addClass('active').siblings().removeClass('active');
+    
+    if (page_location == "" || null) {
+        $('.navbar_links a[href="/"]').addClass('active').siblings().removeClass('active');
+    }
+</script>
